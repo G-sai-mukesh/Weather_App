@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Premium Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="top-bar">
+
+            <div class="search-wrapper">
+
+                <div class="search-input-box">
+
+                    <span class="location-icon">📍</span>
+
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder="Search Indian city..."
+                        autocomplete="off"
+                    >
+
+                    <div id="loader"></div>
+
+                </div>
+
+                <div id="suggestions"></div>
+
+            </div>
+
+            <button onclick="getWeather()">
+                Search
+            </button>
+
+        </div>
+
+        <div class="popular-cities">
+
+            <button onclick="loadWeather('Hyderabad')">
+                Hyderabad
+            </button>
+
+            <button onclick="loadWeather('Mumbai')">
+                Mumbai
+            </button>
+
+            <button onclick="loadWeather('Delhi')">
+                Delhi
+            </button>
+
+            <button onclick="loadWeather('Bangalore')">
+                Bangalore
+            </button>
+
+        </div>
+
+        <div class="recent-searches">
+
+            <h3>Recent Searches</h3>
+
+            <div id="recentContainer"></div>
+
+        </div>
+
+        <div class="weather-main">
+
+            <div class="left">
+
+                <h1 id="temp">--°C</h1>
+
+                <h2 id="city">City</h2>
+
+                <p id="condition">Condition</p>
+
+            </div>
+
+            <div class="right">
+
+                <img id="icon" src="" alt="weather">
+
+            </div>
+
+        </div>
+
+        <div class="weather-details">
+
+            <div class="detail-card">
+                <h3>Humidity</h3>
+                <p id="humidity">--%</p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Wind</h3>
+                <p id="wind">-- km/h</p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Feels Like</h3>
+                <p id="feels">--°C</p>
+            </div>
+
+        </div>
+
+        <h2 class="forecast-title">
+            Next 3 Days Forecast
+        </h2>
+
+        <div class="forecast-container" id="forecastContainer">
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
