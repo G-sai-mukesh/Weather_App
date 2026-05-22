@@ -48,7 +48,7 @@ async function loadWeather(location) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/weather?city=${location}`
+            `https://weather-app-1-8yfo.onrender.com/weather?city=${location}`
         );
 
         const data = await response.json();
@@ -231,7 +231,7 @@ async function searchCities() {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/search?q=${query}`
+            `https://weather-app-1-8yfo.onrender.com/search?q=${query}`
         );
 
         const data = await response.json();
