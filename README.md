@@ -17,8 +17,8 @@ https://weather-app-1-8yfo.onrender.com
 - Current weather data
 - 3-day weather forecast
 - Auto location detection
-- Indian city search suggestions
 - Premium modern UI
+- Dynamic UI theme changes based on weather temperature
 - Recent searches
 - Popular Indian cities
 - Responsive design
