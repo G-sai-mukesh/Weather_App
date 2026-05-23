@@ -43,12 +43,14 @@ https://weather-app-1-8yfo.onrender.com
 ## Hosting
 - GitHub (Frontend)
 - Render (Backend)
-
+  
+---
 
 # 📸 Screenshots
 
 <img width="1421" height="824" alt="image" src="https://github.com/user-attachments/assets/ae46b723-45f4-4766-80e4-d35cc142be7b" />
 
+---
 
 # 👨‍💻 Author
 
