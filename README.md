@@ -5,7 +5,7 @@ A modern full-stack weather application built using Node.js, Express.js, HTML, C
 ## 🚀 Live Demo
 
 Frontend:
-[https://YOUR-VERCEL-URL.vercel.app](https://g-sai-mukesh.github.io/Weather_App/client/index.html)
+https://g-sai-mukesh.github.io/Weather_App/client/index.html
 
 Backend API:
 https://weather-app-1-8yfo.onrender.com
@@ -47,7 +47,7 @@ https://weather-app-1-8yfo.onrender.com
 
 # 📸 Screenshots
 
-Add your app screenshots here later.
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/a62babfa-8423-4208-8f33-390e32215f4a" />
 
 
 # 👨‍💻 Author
