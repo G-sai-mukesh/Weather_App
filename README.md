@@ -41,7 +41,7 @@ https://weather-app-1-8yfo.onrender.com
 - WeatherAPI.com
 
 ## Hosting
-- GitHub (Frontend)
+- Vercel (Frontend)
 - Render (Backend)
   
 ---
