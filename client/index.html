@@ -1,129 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Premium Weather App</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="container">
+  <div class="bg-layer" id="bgLayer"></div>
+  <div class="orb orb1" id="orb1"></div>
+  <div class="orb orb2" id="orb2"></div>
+  <div class="noise"></div>
 
-        <div class="top-bar">
+  <div class="app">
 
-            <div class="search-wrapper">
+    <!-- SEARCH BAR -->
+    <div class="search-zone">
+      <div class="search-wrapper">
+        <svg class="search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off">
+        <div id="loader" class="spin"></div>
+        <div id="suggestions"></div>
+      </div>
+      <button class="btn-search" onclick="getWeather()">Go</button>
+    </div>
 
-                <div class="search-input-box">
+    <!-- QUICK CITIES -->
+    <div class="quick-cities">
+      <button onclick="loadWeather('Hyderabad')">Hyderabad</button>
+      <button onclick="loadWeather('Mumbai')">Mumbai</button>
+      <button onclick="loadWeather('Delhi')">Delhi</button>
+      <button onclick="loadWeather('Bangalore')">Bangalore</button>
+      <button onclick="loadWeather('Chennai')">Chennai</button>
+    </div>
 
-                    <span class="location-icon">📍</span>
+    <!-- RECENT -->
+    <div class="recent-row" id="recentRow">
+      <span class="recent-label">Recent</span>
+      <div id="recentContainer"></div>
+    </div>
 
-                    <input
-                        type="text"
-                        id="cityInput"
-                        placeholder="Search Indian city..."
-                        autocomplete="off"
-                    >
+    <!-- MAIN WEATHER CARD -->
+    <div class="hero-card" id="heroCard">
 
-                    <div id="loader"></div>
-
-                </div>
-
-                <div id="suggestions"></div>
-
-            </div>
-
-            <button onclick="getWeather()">
-                Search
-            </button>
-
+      <div class="hero-left">
+        <div class="city-name" id="city">—</div>
+        <div class="condition-text" id="condition">Loading...</div>
+        <div class="temp-display" id="temp">--°</div>
+        <div class="feels-row">
+          <span>Feels like </span><span id="feels">--°C</span>
         </div>
+      </div>
 
-        <div class="popular-cities">
-
-            <button onclick="loadWeather('Hyderabad')">
-                Hyderabad
-            </button>
-
-            <button onclick="loadWeather('Mumbai')">
-                Mumbai
-            </button>
-
-            <button onclick="loadWeather('Delhi')">
-                Delhi
-            </button>
-
-            <button onclick="loadWeather('Bangalore')">
-                Bangalore
-            </button>
-
-        </div>
-
-        <div class="recent-searches">
-
-            <h3>Recent Searches</h3>
-
-            <div id="recentContainer"></div>
-
-        </div>
-
-        <div class="weather-main">
-
-            <div class="left">
-
-                <h1 id="temp">--°C</h1>
-
-                <h2 id="city">City</h2>
-
-                <p id="condition">Condition</p>
-
-            </div>
-
-            <div class="right">
-
-                <img id="icon" src="" alt="weather">
-
-            </div>
-
-        </div>
-
-        <div class="weather-details">
-
-            <div class="detail-card">
-                <h3>Humidity</h3>
-                <p id="humidity">--%</p>
-            </div>
-
-            <div class="detail-card">
-                <h3>Wind</h3>
-                <p id="wind">-- km/h</p>
-            </div>
-
-            <div class="detail-card">
-                <h3>Feels Like</h3>
-                <p id="feels">--°C</p>
-            </div>
-
-        </div>
-
-        <h2 class="forecast-title">
-            Next 3 Days Forecast
-        </h2>
-
-        <div class="forecast-container" id="forecastContainer">
-
-        </div>
+      <div class="hero-right">
+        <img id="icon" src="" alt="weather icon" class="weather-icon">
+        <div class="temp-range" id="tempRange"></div>
+      </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <!-- STAT CARDS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 4.5-7 13-7 13S5 13.5 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div class="stat-label">Humidity</div>
+        <div class="stat-val" id="humidity">--%</div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        <div class="stat-label">Wind</div>
+        <div class="stat-val" id="wind">-- km/h</div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <div class="stat-label">UV Index</div>
+        <div class="stat-val" id="uv">--</div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 0 0 4 4h9a5 5 0 1 0-.1-9.999 5.002 5.002 0 0 0-9.78 2.096A4.001 4.001 0 0 0 3 15z"/></svg>
+        <div class="stat-label">Cloud Cover</div>
+        <div class="stat-val" id="cloud">--%</div>
+      </div>
+    </div>
 
+    <!-- TEMP VIBE BAR -->
+    <div class="vibe-bar" id="vibeBar">
+      <span class="vibe-label" id="vibeLabel">—</span>
+      <div class="vibe-track">
+        <div class="vibe-fill" id="vibeFill"></div>
+        <div class="vibe-thumb" id="vibeThumb"></div>
+      </div>
+    </div>
+
+    <!-- FORECAST -->
+    <div class="forecast-section">
+      <div class="section-title">3-Day Forecast</div>
+      <div class="forecast-grid" id="forecastContainer"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
