@@ -5,7 +5,7 @@ A modern full-stack weather application built using Node.js, Express.js, HTML, C
 ## 🚀 Live Demo
 
 Frontend:
-https://g-sai-mukesh.github.io/Weather_App/client/index.html
+https://weather-app-omega-five-45.vercel.app/
 
 Backend API:
 https://weather-app-1-8yfo.onrender.com
