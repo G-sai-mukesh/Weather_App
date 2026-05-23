@@ -47,7 +47,7 @@ https://weather-app-1-8yfo.onrender.com
 
 # 📸 Screenshots
 
-<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/a62babfa-8423-4208-8f33-390e32215f4a" />
+<img width="1421" height="824" alt="image" src="https://github.com/user-attachments/assets/ae46b723-45f4-4766-80e4-d35cc142be7b" />
 
 
 # 👨‍💻 Author
