@@ -50,10 +50,10 @@ https://weather-app-1-8yfo.onrender.com
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ae46b723-45f4-4766-80e4-d35cc142be7b"
-       width="45%" />
+       width="48%" />
 
   <img src="https://github.com/user-attachments/assets/35cab1fd-91ea-4b1e-991d-be73eb2f83b6"
-       width="45%" />
+       width="48%" />
 </p>
 
 
