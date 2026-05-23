@@ -48,8 +48,13 @@ https://weather-app-1-8yfo.onrender.com
 
 # 📸 Screenshots
 
-<img width="1421" height="824" alt="image" src="https://github.com/user-attachments/assets/ae46b723-45f4-4766-80e4-d35cc142be7b" />
-<img width="1265" height="827" alt="image" src="https://github.com/user-attachments/assets/35cab1fd-91ea-4b1e-991d-be73eb2f83b6" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ae46b723-45f4-4766-80e4-d35cc142be7b"
+       width="45%" />
+
+  <img src="https://github.com/user-attachments/assets/35cab1fd-91ea-4b1e-991d-be73eb2f83b6"
+       width="45%" />
+</p>
 
 
 ---
